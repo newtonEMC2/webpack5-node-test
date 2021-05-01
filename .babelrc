@@ -1,0 +1,25 @@
+{
+    "presets": [
+        "@babel/preset-env"
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime"
+        ],
+        [
+            "module-resolver",
+            {
+                "alias": {
+                    "@config": "./hola",
+                    // "@interfaces": "./interfaces",
+                    // "@modules": "./modules",
+                    // "@models": "./models",
+                    // "@routes": "./routes",
+                    // "@classes": "./classes",
+                    // "@validators": "./classes/validators",
+                    // "@server": "./server"
+                }
+            }
+        ]
+    ]
+}
