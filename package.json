@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rm -rf build && webpack --watch --config webpack.dev.js",
-    "build": "rm -rf build && npx webpack --config webpack.prod.js"
+    "build": "rm -rf build && npx webpack --config webpack.prod.js",
+    "start": "npm run build && npx pm2-runtime build/main.js"
   },
   "keywords": [],
   "author": "",
