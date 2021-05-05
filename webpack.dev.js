@@ -4,7 +4,7 @@ const NodemonPlugin = require('nodemon-webpack-plugin');
 
 module.exports = {
     mode: "development",
-    target: 'node',
+    externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc. *just for webpack 5. In lower versions, target:node
     externals: [nodeExternals()],
     entry: './server.js',
     output: {
@@ -20,6 +20,7 @@ module.exports = {
             }
         ]
     },
+
     plugins: [
         new NodemonPlugin()
     ],

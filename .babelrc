@@ -2,9 +2,10 @@
     "presets": [
         "@babel/preset-env"
     ],
+    "sourceType": "unambiguous",
     "plugins": [
         [
-            "@babel/plugin-transform-runtime"
+            "@babel/plugin-transform-runtime",
         ],
         [
             "module-resolver",
