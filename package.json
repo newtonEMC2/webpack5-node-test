@@ -7,7 +7,7 @@
     "test": "npx mocha test --require @babel/register -t 5000 --exit",
     "dev": "rm -rf build && webpack --watch --config webpack.dev.js",
     "build": "rm -rf build && npx webpack --config webpack.prod.js",
-    "start": "npm run build && npx pm2-runtime build/main.js"
+    "start": "npm run build && node build/main.js"
   },
   "keywords": [],
   "author": "",

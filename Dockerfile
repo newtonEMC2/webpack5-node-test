@@ -9,13 +9,14 @@ WORKDIR /home/ge/app
 
 COPY package*.json ./
 
+RUN npm install
+
 USER ge
 
 COPY --chown=ge:ge . .
 
-RUN npm install
 
-RUN npm install pm2@4.5.6
+# RUN npm install pm2@4.5.6
 
 # EXPOSE 3002
 

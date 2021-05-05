@@ -11,8 +11,8 @@ describe('auth tests', function () {
         server = require('../server')
     })
 
-    afterEach(function () {
-        server.close()
+    afterEach(async function () {
+        await server.close()
     })
 
     /**
