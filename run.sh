@@ -1,3 +1,5 @@
+git pull
+git checkout master
 docker stop nodejs-image-demooo
 docker rm $(docker ps -a -q)
 docker build -t webpack5test  .
