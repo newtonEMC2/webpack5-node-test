@@ -1,9 +1,8 @@
 const a = () => {
-    console.log(replace("holaaa"))
-    const z = [..."holaaaaaaaaaaaa"]
-    return 3
+  console.log(replace('holaaa'))
+  return 3
 }
 
-const replace = (string) => string.replace(/a/, "s")
+const replace = (string) => string.replace(/a/, 's')
 
 module.exports = a

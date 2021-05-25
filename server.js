@@ -1,6 +1,5 @@
 
 const express = require('express')
-const sq = require('sequelize')
 const a = require('./ie')
 // const c = require('@config/here')
 const c = require('@config/here')
@@ -10,16 +9,15 @@ const app = express()
 const port = 3002
 
 app.get('/', (req, res) => {
-    res.status(200).json({ a: a() * c() * b() })
+  res.status(200).json({ a: a() * c() * b() })
 })
 
 app.get('/crash', (req, res) => {
-    process.exit(0)
+  process.exit(0)
 })
-
 
 const serverObj = app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}`)
 })
 
-module.exports = serverObj;
+module.exports = serverObj
