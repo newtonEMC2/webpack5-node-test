@@ -18,11 +18,10 @@ describe('auth tests', function () {
   /**
      * data upload
      */
-  it('fails when token is wrong on POST /uploadData', async function () {
+  it('returns 200 on POST /uploadData', async function () {
     return request(server)
       .get('/')
       .set('Accept', 'application/json')
-      .expect(res => console.log(res.body))
       .expect(res => { if (res.body.a !== 750) throw new Error('nog good') })
       .expect(200)
   })
