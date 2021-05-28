@@ -12,6 +12,7 @@ services:
   jenkins:
     depends_on: 
       - dind
+    user: root
     image: jenkinsci/blueocean
     restart: always
     networks:
