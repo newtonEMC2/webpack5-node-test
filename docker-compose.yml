@@ -10,6 +10,8 @@ volumes:
 services:
 
   jenkins:
+    depends_on: 
+      - dind
     image: jenkinsci/blueocean
     restart: always
     networks:
