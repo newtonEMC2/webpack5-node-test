@@ -22,9 +22,7 @@ pipeline {
         //         '''
         //     }
         // }
-        stage('buildingg') {
-            steps {sh "cat 'built'"}
-        }
+        
         stage('Test') { 
             steps {
                 sh 'npm test' 
