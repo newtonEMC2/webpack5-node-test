@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    // agent { dockerfile true }
     agent none
     
     // agent {
@@ -14,13 +13,6 @@ pipeline {
         CI = 'true' 
     }
     stages {
-        stage('build') {
-            steps {
-                agent { dockerfile true }
-
-            }
-
-        }
         // stage('Build') {
         //     steps {
         //         sh '''
@@ -29,6 +21,10 @@ pipeline {
         //         '''
         //     }
         // }
+        stage('buildingg') {
+            agent { dockerfile true }
+            
+        }
         stage('Test') { 
             steps {
                 sh 'npm test' 
