@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
+    agent { dockerfile true }
     // agent {
     //     docker {
     //         image 'node:lts-buster-slim'
@@ -12,14 +12,14 @@ pipeline {
         CI = 'true' 
     }
     stages {
-        stage('Build') {
-            steps {
-                sh '''
-                docker build -t webpack5test  .
-                docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
-                '''
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh '''
+        //         docker build -t webpack5test  .
+        //         docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
+        //         '''
+        //     }
+        // }
         stage('Test') { 
             steps {
                 sh 'npm test' 
