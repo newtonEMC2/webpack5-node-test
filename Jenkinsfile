@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    // agent any
+    agent any
     // agent {
     //     docker {
     //         image 'node:lts-buster-slim'
