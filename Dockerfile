@@ -16,8 +16,6 @@ USER ge
 COPY --chown=ge:ge . .
 
 
-# RUN npm install pm2@4.5.6
 
-# EXPOSE 3002
 
 CMD ["npm", "start" ]
