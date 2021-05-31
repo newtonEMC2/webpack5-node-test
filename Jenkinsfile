@@ -23,7 +23,7 @@ pipeline {
         //     }
         // }
         stage('buildingg') {
-            steps {sh 'node --version'}
+            steps {cat 'built'}
         }
         stage('Test') { 
             steps {
