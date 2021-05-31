@@ -23,6 +23,6 @@ describe('auth tests', function () {
       .get('/')
       .set('Accept', 'application/json')
       .expect(res => { if (res.body.a !== 750) throw new Error('nog good') })
-      .expect(201)
+      .expect(200)
   })
 })
