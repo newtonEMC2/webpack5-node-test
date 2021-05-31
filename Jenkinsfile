@@ -23,7 +23,7 @@ pipeline {
         // }
         stage('buildingg') {
             agent { dockerfile true }
-            
+            steps {sh 'node --version'}
         }
         stage('Test') { 
             steps {
