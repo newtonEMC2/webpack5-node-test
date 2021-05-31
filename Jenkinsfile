@@ -1,7 +1,9 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent { dockerfile true }
+    // agent { dockerfile true }
+    agent none
+    
     // agent {
     //     docker {
     //         image 'node:lts-buster-slim'
@@ -12,6 +14,10 @@ pipeline {
         CI = 'true' 
     }
     stages {
+        stage('build') {
+            agent { dockerfile true }
+
+        }
         // stage('Build') {
         //     steps {
         //         sh '''
