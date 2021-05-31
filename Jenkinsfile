@@ -23,8 +23,9 @@ pipeline {
         // }
         stage('buildingg') {
             agent { 
-                dockerfile true 
-                reuseNode true
+                dockerfile {
+                    reuseNode true
+                }
             }
             steps {sh 'node --version'}
         }
