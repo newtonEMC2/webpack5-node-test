@@ -23,7 +23,7 @@ pipeline {
         //     }
         // }
         stage('buildingg') {
-            steps {cat 'built'}
+            steps {sh "cat 'built'"}
         }
         stage('Test') { 
             steps {
