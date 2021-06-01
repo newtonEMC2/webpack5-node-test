@@ -8,17 +8,9 @@ pipeline {
     }
     stages {
         stage('test') {
-            agent {
-                node {
-                    label "some-agent"
-                }
-            }
+            agent {dockerfile true}
             steps {
                 sh '''
-                docker rm -f $(docker ps -aq)
-                docker build -t webpack5test  .
-                docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
-                wheris npm
                 npm test
                 docker rm -f $(docker ps -aq)
                 '''
