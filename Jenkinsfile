@@ -1,8 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    // agent {dockerfile true}
-    agent any
+    agent none
     
     // agent {
     //     docker {
@@ -14,18 +13,28 @@ pipeline {
         CI = 'true' 
     }
     stages {
-        stage('Build') {
+        // stage('Build') {
+        //     steps {
+        //         sh '''
+        //         docker build -t webpack5test  .
+        //         docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
+        //         '''
+        //     }
+        // }
+        stage('buildingg') {
             steps {
-                sh '''
-                docker build -t webpack5test  .
-                docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
-                '''
+                agent {dockerfile {reuseNode true}}
             }
+            // agent { 
+            //     dockerfile {
+            //         reuseNode true
+            //     }
+            // }
+            // steps {sh 'node --version'}
         }
-        
         stage('Test') { 
             steps {
-                sh "docker ps"
+                sh 'npm test' 
             }
         }
     }
