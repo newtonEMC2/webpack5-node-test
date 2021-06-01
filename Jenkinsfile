@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent {label 'dockerfile'}
+    agent {dockerfile true}
     
     // agent {
     //     docker {
@@ -22,12 +22,16 @@ pipeline {
         //     }
         // }
         stage('buildingg') {
-            agent { 
-                dockerfile {
-                    reuseNode true
-                }
+            steps {
+                echo 'building'
+
             }
-            steps {sh 'node --version'}
+            // agent { 
+            //     dockerfile {
+            //         reuseNode true
+            //     }
+            // }
+            // steps {sh 'node --version'}
         }
         stage('Test') { 
             steps {
