@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent  label 'webpack5test' }
+    agent  {label 'webpack5test' }
     
     environment {
         CI = 'true' 
