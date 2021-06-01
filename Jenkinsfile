@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 docker rm -f $(docker ps -aq) | true
                 docker build -t webpack5test  .
-                docker run --name nodejs-image-demooo -v /var:/var -p 80:3002 --restart always -d webpack5test
+                docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
                 npm test
                 '''
             }
