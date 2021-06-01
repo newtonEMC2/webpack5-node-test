@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh '''
                 npm test
-                docker rm -f $(docker ps -aq)
+                docker ps
                 '''
             }
         }
