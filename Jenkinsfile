@@ -22,11 +22,7 @@ node {
             // docker rm -f $(docker ps -aq) | true
             // docker build -t webpack5test .
             // docker run --name nodejs-image-demooo -d webpack5test
-            sh '''
-                docker exec nodejs-image-demooo bash
-                npm test
-                exit
-            '''
+            sh 'docker exec nodejs-image-demooo bash && npm test && exit'
             
 
             // sh 'docker ps'
