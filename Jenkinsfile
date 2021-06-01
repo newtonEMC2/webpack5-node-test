@@ -10,6 +10,14 @@ node {
 
         stage('Test'){
 
+            sh '''
+            docker rm -f $(docker ps -aq) | true
+            docker build -t webpack5test .
+            docker run --name nodejs-image-demooo -d webpack5test
+            docker exec -i nodejs-image-demooo bash
+            npm test
+            '''
+
             // env.NODE_ENV = "test"
 
             // print "Environment will be : ${env.NODE_ENV}"
