@@ -6,6 +6,7 @@ node {
     try {
         stage('Checkout'){
             checkout scm
+            sh 'ls'
         }
 
         stage('build'){
@@ -13,8 +14,6 @@ node {
             docker rm -f $(docker ps -aq) | true
             docker build -t webpack5test .
             docker run --name nodejs-image-demooo -d webpack5test
-            docker ps
-            ls
             '''
         }
 
