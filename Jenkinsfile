@@ -2,6 +2,7 @@
 
 pipeline {
     // agent {dockerfile true}
+    agent none
     
     // agent {
     //     docker {
