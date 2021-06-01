@@ -7,6 +7,7 @@ node {
         stage('Checkout'){
             checkout scm
             sh 'ls'
+            sh 'whereis npm'
         }
 
         stage('build'){
