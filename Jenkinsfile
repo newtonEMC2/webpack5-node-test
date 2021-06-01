@@ -3,18 +3,23 @@
 
 
 node {
+    def testImage
     try {
         stage('Checkout'){
             checkout scm
         }
 
         stage('build'){
-            sh '''
-            docker rm -f $(docker ps -aq) | true
-            docker build -t webpack5test .
-            docker run --name nodejs-image-demooo -d webpack5test
-            '''
+            testImage = docker.build("test-image", ".")
         }
+
+        // stage('build'){
+        //     sh '''
+        //     docker rm -f $(docker ps -aq) | true
+        //     docker build -t webpack5test .
+        //     docker run --name nodejs-image-demooo -d webpack5test
+        //     '''
+        // }
 
         stage('Test'){
 
@@ -22,7 +27,9 @@ node {
             // docker rm -f $(docker ps -aq) | true
             // docker build -t webpack5test .
             // docker run --name nodejs-image-demooo -d webpack5test
-            sh 'docker exec nodejs-image-demooo bash && npm test && exit'
+            testImage.inside {
+                sh 'npm test'
+            }
             
 
             // sh 'docker ps'
