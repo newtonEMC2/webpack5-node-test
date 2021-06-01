@@ -12,10 +12,8 @@ pipeline {
                 sh '''
                 docker rm -f $(docker ps -aq)
                 docker build -t webpack5test  .
-                docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
-                ls
-                docker exec -i nodejs-image-demooo bash
-                ls
+                docker run --name nodejs-image-demooo -v /tmp:/tmp -p 80:3002 --restart always -d webpack5test
+                npm test
                 docker rm -f $(docker ps -aq)
                 '''
             }
