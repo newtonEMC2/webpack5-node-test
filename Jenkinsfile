@@ -1,18 +1,22 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent none
+    agent any
     
     environment {
         CI = 'true' 
     }
     stages {
         stage('test') {
-            agent {dockerfile true}
             steps {
                 sh '''
-                npm test
-                docker ps
+                docker rm -f $(docker ps -aq)
+                docker build -t webpack5test  .
+                docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
+                ls
+                docker exec -i nodejs-image-demooo bash
+                ls
+                docker rm -f $(docker ps -aq)
                 '''
             }
         }
