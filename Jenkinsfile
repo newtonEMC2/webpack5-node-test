@@ -22,14 +22,10 @@ node {
         // }
 
         stage('Test'){
-
-            // sh '''
-            // docker rm -f $(docker ps -aq) | true
-            // docker build -t webpack5test .
-            // docker run --name nodejs-image-demooo -d webpack5test
+            sh 'docker rm -f $(docker ps -aq) | true'
             testImage.inside {
-                sh 'docker ps'
                 sh 'npm test'
+                sh 'exit'
             }
             
 
