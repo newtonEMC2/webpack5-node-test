@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent {label dockerfile}
+    agent {label 'dockerfile'}
     
     // agent {
     //     docker {
