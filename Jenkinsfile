@@ -10,6 +10,7 @@ pipeline {
         stage('test') {
             steps {
                 sh '''
+                docker rm -f $(docker ps -aq)
                 docker build -t webpack5test  .
                 docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
                 docker exec -it webpack5test bash
