@@ -28,13 +28,13 @@ node {
             // docker build -t webpack5test .
             // docker run --name nodejs-image-demooo -d webpack5test
             testImage.inside {
+                sh 'docker ps'
                 sh 'npm test'
             }
             
 
             // sh 'docker ps'
 
-            print "heloooooooo"
 
     }
     } catch(err) {
