@@ -37,6 +37,8 @@ node {
             // sh 'npm install'
             // sh 'npm test'
 
+            sh 'docker ps'
+
             print "heloooooooo"
 
     }
