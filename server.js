@@ -6,7 +6,7 @@ const c = require('@config/here')
 const b = require('./ieee')
 const app = express()
 // app.use(cors())
-const port = 3002
+const port = process.env.NODE_ENV === 'test' ? 3004 : 3002
 
 app.get('/', (req, res) => {
   res.status(200).json({ a: a() * c() * b(), })

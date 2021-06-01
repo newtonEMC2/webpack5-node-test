@@ -8,4 +8,4 @@ services:
       - .:/home/ge/app
       - /home/ge/app/node_modules/
     ports: 
-        - "3004:3002"
+        - "3006:3002"

@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "npx mocha test --require @babel/register -t 5000 --exit",
+    "test": "set NODE_ENV=test&& npx mocha test --require @babel/register -t 5000 --exit",
+    "test:x": "NODE_ENV=test&& npx mocha test --require @babel/register -t 5000 --exit",
     "dev": "rm -rf build && webpack --watch --config webpack.dev.js",
     "build": "rm -rf build && npx webpack --config webpack.prod.js",
     "start": "npm run build && node build/main.js",
