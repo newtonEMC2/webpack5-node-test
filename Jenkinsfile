@@ -34,6 +34,12 @@ node {
         
 
     } catch(err) {
+        mail body: 'project build error',
+            from: 'acorbacho@nnergix.com',
+            replyTo: 'acorbacho@nnergix.com',
+            subject: 'project error when building',
+            to: 'acorbacho@nnergix.com'
+
         throw err
     }
     
