@@ -13,26 +13,27 @@ node {
             testImage = docker.build("test-image", ".")
         }
 
-        // stage('build'){
-        //     sh '''
-        //     docker rm -f $(docker ps -aq) | true
-        //     docker build -t webpack5test .
-        //     docker run --name nodejs-image-demooo -d webpack5test
-        //     '''
-        // }
-
         stage('Test'){
             sh 'docker rm -f $(docker ps -aq) | true'
             testImage.inside {
                 sh 'npm test'
                 sh 'exit'
             }
-            
+        }
 
-            // sh 'docker ps'
+        // deploy('')
 
+        stage('Notify'){
+            mail 
+                body: 'project build successful',
+                from: 'alexis.corbacho@hotmail.com',
+                replyTo: 'alexis.corbacho@hotmail.com',
+                subject: 'project successfully built',
+                to: 'acorbacho@nnergix.com'
+        }
 
-    }
+        
+
     } catch(err) {
         throw err
     }
