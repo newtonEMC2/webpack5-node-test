@@ -24,8 +24,7 @@ node {
         // deploy('')
 
         stage('Notify'){
-            mail 
-                body: 'project build successful',
+            mail body: 'project build successful',
                 from: 'alexis.corbacho@hotmail.com',
                 replyTo: 'alexis.corbacho@hotmail.com',
                 subject: 'project successfully built',
