@@ -22,7 +22,7 @@ node {
         }
 
         stage('deploy'){
-            sh 'ssh root@localhost -p 3010 -password root'
+            sh 'ssh root@10.5.0.6 -p 22 -password root'
             sh 'ls'
             sh 'exit'
                 
