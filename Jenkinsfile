@@ -21,7 +21,13 @@ node {
             }
         }
 
-        // deploy('')
+        deploy(''){
+            sh 'ssh root@localhost -p 3010 -password root'
+            sh 'ls'
+            sh 'exit'
+                
+            
+        }
 
         stage('Notify'){
             mail body: 'project build successful ladd',
