@@ -21,7 +21,7 @@ node {
             }
         }
 
-        deploy(''){
+        deploy('deploy'){
             sh 'ssh root@localhost -p 3010 -password root'
             sh 'ls'
             sh 'exit'
