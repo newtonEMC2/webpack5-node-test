@@ -27,8 +27,8 @@ node {
             cd /home
             ls
             exit
-            EOF
-            '''
+EOF
+'''
                 
             
         }
