@@ -25,6 +25,7 @@ node {
             sh '''
             sshpass -p 'root' ssh root@10.5.0.6
             ls
+            cd /home && ls
             exit
             '''
                 
