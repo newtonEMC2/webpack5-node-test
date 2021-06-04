@@ -26,9 +26,6 @@ node {
             sshpass -p 'root' ssh root@10.5.0.6 << EOF
             cd /home
             ls
-            // cd /home && git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackp && cd webpackp
-            ls
-            pwd
             exit
             EOF
             '''
