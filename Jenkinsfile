@@ -24,11 +24,11 @@ node {
         stage('deploy'){
             sh '''
             sshpass -p 'root' ssh root@10.5.0.6 << EOF
-            cd /home
+            cd ..
             ls
             exit
-            EOF
-            '''
+EOF
+'''
                 
             
         }
