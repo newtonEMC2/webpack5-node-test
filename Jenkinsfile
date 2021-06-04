@@ -22,10 +22,11 @@ node {
         }
 
         stage('deploy'){
-            sh '''
-            sshpass -p 'root' ssh root@10.5.0.6
+            sh '''#!/bin/bash
+            sshpass -p 'root' ssh root@10.5.0.6 >> ENDSSH
             ls
             exit
+            ENDSSH
             '''
                 
             
