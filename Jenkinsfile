@@ -23,7 +23,7 @@ node {
 
         stage('deploy'){
             sh '''
-            sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
+            sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
@@ -31,7 +31,7 @@ node {
             npm i
             npm start
             exit
-            EOF
+            
             '''
                 
             
