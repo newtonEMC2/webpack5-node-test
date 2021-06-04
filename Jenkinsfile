@@ -24,9 +24,12 @@ node {
         stage('deploy'){
             sh '''
             sshpass -p 'root' ssh root@10.5.0.6 << EOF
-            ls
-            cd /home && git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt && git checkout dev
-            ls
+            cd /home
+            git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
+            cd webpackt
+            git checkout dev
+            npm i
+            npm start
             exit
             EOF
             '''
