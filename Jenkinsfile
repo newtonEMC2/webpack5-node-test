@@ -21,27 +21,16 @@ node {
             }
         }
 
-        // stage('deploy'){
-        //     sh '''
-        //     sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
-        //     cd /home
-        //     git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
-        //     cd webpackt
-        //     git checkout dev
-        //     npm i
-        //     npm start
-        //     exit
-        //     EOF
-        //     '''
-        // }
-
         stage('deploy'){
             sh '''
             sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
-            ./run.sh
+            git checkout dev
+            npm i
+            npm start
+            exit
             EOF
             '''
         }
