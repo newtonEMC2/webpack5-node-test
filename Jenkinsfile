@@ -29,7 +29,9 @@ node {
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
             git checkout dev
-            docker-compose up --build -d
+            docker rm -f $(docker ps -aq)
+            docker build -t webpack5test  .
+            docker run --name nodejs-image-demooo -p 3006:3002 --restart always -d webpack5test
             exit
             EOF
             '''
