@@ -1,6 +1,6 @@
-git pull
-git checkout dev
-docker stop nodejs-image-demooo
-docker rm $(docker ps -a -q)
+# git pull
+# git checkout dev
+# docker stop nodejs-image-demooo
+docker rm -f $(docker ps -aq)
 docker build -t webpack5test  .
-docker run --name nodejs-image-demooo -p 80:3002 --restart always -d webpack5test
+docker run --name nodejs-image-demooo --restart always -d webpack5test
