@@ -30,8 +30,7 @@ node {
             cd webpackt
             git checkout dev
             chmod 777 -R /home
-            run.sh
-            docker run --name nodejs-image-demooo -p 3006:3002 --restart always -d webpack5test
+            bash run.sh
             exit
             EOF
             '''
