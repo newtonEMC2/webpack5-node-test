@@ -29,8 +29,7 @@ node {
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
             git checkout dev
-            npm i
-            npm start
+            docker-compose up --build -d
             exit
             EOF
             '''
