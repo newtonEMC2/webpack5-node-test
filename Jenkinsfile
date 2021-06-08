@@ -29,7 +29,7 @@ node {
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
             git checkout dev
-            chmod 777 -R /home
+            chmod 777 -R run.sh
             bash run.sh
             exit
             EOF
