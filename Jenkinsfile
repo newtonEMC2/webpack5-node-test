@@ -24,6 +24,7 @@ node {
         stage('deploy'){
             sh '''
             sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
+            PATH="/root/.nvm/versions/node/v6.10.0/bin:$PATH"
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
