@@ -24,8 +24,6 @@ node {
         stage('deploy'){
             sh '''
             sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
-            PATH="/var/run/docker.sock:$PATH"
-
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
