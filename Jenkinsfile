@@ -16,6 +16,7 @@ node {
         stage('Test'){
             sh 'docker rm -f $(docker ps -aq) | true'
             testImage.inside {
+                sh 'ls'
                 sh 'npm i'
                 sh 'npm test'
                 sh 'exit'
