@@ -16,6 +16,7 @@ node {
         stage('Test'){
             sh 'docker rm -f $(docker ps -aq) | true'
             testImage.inside {
+                sh 'npm i'
                 sh 'npm test'
                 sh 'exit'
             }
@@ -24,9 +25,6 @@ node {
         stage('deploy'){
             sh '''
             sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
-            PATH="/usr/bin/docker.sock:$PATH"
-            PATH="/var/run/docker.sock:$PATH"
-            usermod -aG docker root
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
