@@ -31,9 +31,9 @@ node {
             cd webpackt
             git checkout dev
             git pull
-            ##export DOCKER_HOST=ssh://root@10.5.0.6:22
+            ##DOCKER_HOST=ssh://root@10.5.0.6:22
+            export DOCKER_HOST=tcp://10.5.0.8:2376
             ##docker -H tcp://10.5.0.6 ps
-            dockerd
             docker ps
             ##docker rm -f $(docker ps -aq)
             ##docker build -t webpack5test .
