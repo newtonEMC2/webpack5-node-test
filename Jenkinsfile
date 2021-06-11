@@ -34,7 +34,7 @@ node {
             git pull
             rm nohup.out
             npm i
-            (nohup npm start &) && ls
+            (nohup npm start & \
             EOF
             '''
         }
@@ -55,7 +55,6 @@ node {
             replyTo: 'acorbacho@nnergix.com',
             subject: 'project error when building',
             to: 'acorbacho@nnergix.com'
-
         throw err
     }
     
