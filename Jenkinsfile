@@ -33,7 +33,7 @@ node {
             git checkout dev
             git pull
             npm i
-            npm start
+            nohup npm start &
 EOF
             '''
         }
