@@ -33,6 +33,7 @@ node {
             git checkout dev
             git pull
             npm i
+            npx forever stopall
             npm start
 EOF
             '''
