@@ -31,7 +31,7 @@ node {
             cd webpackt
             git checkout dev
             git pull
-            export DOCKER_HOST="ssh://root@10.5.0.6
+            export DOCKER_HOST="ssh://root@10.5.0.6"
             ##docker -H tcp://10.5.0.6 ps
             docker ps
             ##docker rm -f $(docker ps -aq)
