@@ -25,8 +25,8 @@ node {
 
         stage('deploy'){
             sh '''
-            ln -s /snap/bin/docker /usr/bin/docker
             sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
+            ln -s /snap/bin/docker /usr/bin/docker
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
