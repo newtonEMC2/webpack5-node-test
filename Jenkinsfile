@@ -34,7 +34,7 @@ node {
             git pull
             rm nohup.out
             npm i
-            nohup npm start & ls
+            nohup npm start & exit
             EOF
             '''
         }
