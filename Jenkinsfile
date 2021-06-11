@@ -25,11 +25,13 @@ node {
 
         stage('deploy'){
             sh '''
+            ln -s /snap/bin/docker /usr/bin/docker
             sshpass -p 'root' ssh -o stricthostkeychecking=no root@10.5.0.6 << EOF
             cd /home
             git clone https://github.com/newtonEMC2/webpack5-node-test.git webpackt
             cd webpackt
             git checkout dev
+            git pull
             docker rm -f $(docker ps -aq)
             docker build -t webpack5test  .
             docker run --name nodejs-image-demooo -p 3006:3002 --restart always -d webpack5test
