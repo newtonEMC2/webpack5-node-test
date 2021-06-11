@@ -34,18 +34,18 @@ node {
             git pull
             rm nohup.out
             npm i
-            nohup npm start & exit
+            nohup npm start & ls
             EOF
             '''
         }
 
-        stage('Notify'){
-            mail body: 'project build successful ladd',
-                from: 'acorbacho@nnergix.com',
-                replyTo: 'acorbacho@nnergix.com',
-                subject: 'project successfully built',
-                to: 'acorbacho@nnergix.com'
-        }
+        // stage('Notify'){
+        //     mail body: 'project build successful ladd',
+        //         from: 'acorbacho@nnergix.com',
+        //         replyTo: 'acorbacho@nnergix.com',
+        //         subject: 'project successfully built',
+        //         to: 'acorbacho@nnergix.com'
+        // }
 
         
 
