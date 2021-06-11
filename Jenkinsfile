@@ -31,10 +31,10 @@ node {
             cd webpackt
             git checkout dev
             git pull
-            docker ps
-            #docker rm -f $(docker ps -aq)
-            #docker build -t webpack5test .
-            #docker run --name nodejs-image-demooo -p 3006:3002 --restart always -d webpack5test
+            docker ps -H
+            ##docker rm -f $(docker ps -aq)
+            ##docker build -t webpack5test .
+            ##docker run --name nodejs-image-demooo -p 3006:3002 --restart always -d webpack5test
             exit
             EOF
             '''
