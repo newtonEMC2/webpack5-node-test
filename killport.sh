@@ -1,2 +1,2 @@
-taskkill /PID 3002 /F
-tskill typeyourPIDhere 
+netstat -ano | findstr :3010
+tskill 11
