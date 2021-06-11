@@ -32,8 +32,9 @@ node {
             cd webpackt
             git checkout dev
             git pull
+            rm nohup.out
             npm i
-            npm start            
+            nohup npm start &          
             EOF
             '''
         }
