@@ -9,7 +9,7 @@ const app = express()
 const port = process.env.NODE_ENV === 'test' ? 3004 : 3002
 
 app.get('/', (req, res) => {
-  res.status(200).json({ a: a() * c() * b(), b: 'byyy', })
+  res.status(200).json({ a: a() * c() * b(), b: 'booooooooooooooooooooooooo', })
 })
 
 app.get('/crash', (req, res) => {
