@@ -1,2 +1,3 @@
-netstat -ano | findstr :3010
-tskill 11
+pid=$(netstat -ano | findstr :3010)
+echo $pid
+# tskill $pid
